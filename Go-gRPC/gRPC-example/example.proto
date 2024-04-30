@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package example;
+
+option go_package = "example/";
+
+//option go_package= "github.com/techschool/simplebank/pb";
+
+service Greeter {
+    rpc SayHello (HelloRequest) returns (HelloResponse);
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloResponse {
+    string message = 1;
+}
