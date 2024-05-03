@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package rps;
+
+option go_package= "./rps";
+// Service to define the Rock-Paper-Scissors game interface
+service RPS {
+    rpc PlayGame(MoveRequest) returns (GameResult);
+}
+
+// Message to define a player's move
+message MoveRequest {
+    string player_id = 1; 
+    string move = 2; 
+}
+
+// Message to define the result of a game session
+message GameResult {
+    string winner = 1; 
+    string message = 2; 
+}
+
