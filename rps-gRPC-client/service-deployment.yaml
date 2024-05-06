@@ -1,0 +1,13 @@
+# server-service.yaml
+apiVersion: v1
+kind: Service
+metadata:
+    name: rps-server-service
+spec:
+    selector:
+        app: rps-server
+    ports:
+    - protocol: TCP
+      port: 50051
+      targetPort: 50051
+    type: ClusterIP
