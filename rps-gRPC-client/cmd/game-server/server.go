@@ -26,7 +26,7 @@ func (s *RPSServer) PlayGame(ctx context.Context, req *rps.MoveRequest) (*rps.Ga
     move1 := req.GetMove()
     player_id := req.GetPlayerId()
 
-	fmt.Print("----Player 2 is going to play for move 2---\n ")
+	fmt.Print("\n----Player 2 is going to play for move ---\n ")
 	    // computer choice Player 2
 	var options = []string{"rock", "paper", "scissors"}
 	computer_choice := getRandomString(options)
@@ -38,16 +38,16 @@ func (s *RPSServer) PlayGame(ctx context.Context, req *rps.MoveRequest) (*rps.Ga
 		 fmt.Println("\n It's a tie!")
 		 return &rps.GameResult{Winner: "It's a tie", Message: "!!!"}, nil 
     } else if move1 == "rock" && computer_choice == "scissors" {
-		 fmt.Println("\n Game Won by: ", player_id )
+		 fmt.Println("\n Round Won by: ", player_id )
 		 return &rps.GameResult{Winner: player_id, Message: "Won the Game"}, nil 
     } else if move1 == "paper" && computer_choice == "rock" {
-        fmt.Println("\n Game Won by: ", player_id )
+        fmt.Println("\n Round Won by: ", player_id )
 		 return &rps.GameResult{Winner: player_id, Message: "Won the Game"}, nil
     } else if move1 == "scissors" && computer_choice == "paper" {
-         fmt.Println("\n Game Won by: ", player_id )
+         fmt.Println("\n Round Won by: ", player_id )
 		 return &rps.GameResult{Winner: player_id, Message: "Won the Game"}, nil
     } else {
-		 fmt.Println("\n Game Won by: ", player_id )
+		 fmt.Println("\n Round Won by: ", "Player 2" )
 		return &rps.GameResult{Winner: "Player 2", Message: "Won the Game"}, nil
 	}
 	
